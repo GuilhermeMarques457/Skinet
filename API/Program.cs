@@ -28,7 +28,23 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthorization();
 
-// Our API will know where to send the request
 app.MapControllers();
+
+
+// Applying migrations automatically when the app starts
+using var scope = app.Services.CreateScope();
+var services = scope.ServiceProvider;
+var context = services.GetRequiredService<ApplicationDbContext>();
+var logger = services.GetRequiredService<ILogger<Program>>();
+
+try
+{
+    await context.Database.MigrateAsync();
+    await ApplicationDbSeeds.SeedAsync(context);
+}
+catch (Exception ex)
+{
+    logger.LogCritical(ex, "An error occored during applying migrations");
+}
 
 app.Run();
