@@ -31,7 +31,7 @@ namespace Infrastructure.Data
 
         public async Task<T> GetByIdWithSpecificationAsync(ISpecification<T> specification)
         {
-            return await ApplySpecification(specification).FirstAsync()!;
+            return await ApplySpecification(specification).FirstOrDefaultAsync()!;
         }
 
         public async Task<IReadOnlyList<T>> GetAllWithSpecificationAsync(ISpecification<T> specification)

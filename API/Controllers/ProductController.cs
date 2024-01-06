@@ -1,15 +1,17 @@
 ﻿using API.Dtos;
+using API.Errors;
 using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ProductsController : ControllerBase
+    public class ProductsController : BaseAPIController
     {
         private readonly IGenericRepository<Product> _repository;
         private readonly IMapper _mapper;
@@ -31,7 +33,10 @@ namespace API.Controllers
 
 
         [HttpGet("{id}")]
-        public async Task<ProductResponseDto> GetProductById(int id)
+        // Saying to swagger which type of result we will be sending back
+        // [ProducesResponseType(StatusCodes.Status200OK)]
+        // [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<ProductResponseDto>> GetProductById(int id)
         {
             // My solution (it's not so generic if I do this xD)
             //var spec = new ProductWithTypesAndBrandsSpecification();
@@ -39,6 +44,8 @@ namespace API.Controllers
 
             var spec = new ProductWithTypesAndBrandsSpecification(id);
             var product = await _repository.GetByIdWithSpecificationAsync(spec);
+
+            if (product == null) return NotFound(new ApiResponse(404));
 
             return _mapper.Map<Product, ProductResponseDto>(product);
     
