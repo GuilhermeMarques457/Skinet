@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StackExchange.Redis;
 using System;
 using System.Linq;
 
@@ -14,7 +15,6 @@ namespace API.Extensions
     {
         public static IServiceCollection AddApplicationService(this IServiceCollection services, IConfiguration config)
         {
-
             services.AddControllers();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
@@ -22,9 +22,24 @@ namespace API.Extensions
             {
                 options.UseSqlite(config.GetConnectionString("DefaultConnection"));
             });
+
             // Registering our generic repository as a service
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+            // Adding our connection to Redis (it must be Singleton because it will share shared by all users)
+            services.AddSingleton<IConnectionMultiplexer>(opt =>
+            {
+                var options = ConfigurationOptions.Parse(config.GetConnectionString("Redis"));
+
+                return ConnectionMultiplexer.Connect(options);
+            });
+
+            services.AddScoped<IBasketRepository, BasketRepository>();
+
+            // Adding auto mapper
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            // Configuring Invalid parameter resonse
             services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.InvalidModelStateResponseFactory = actionContext =>
@@ -43,6 +58,7 @@ namespace API.Extensions
                 };
             });
 
+            // Adding CORS policy to our client
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy", policy =>
