@@ -14,13 +14,17 @@ namespace API.Controllers
 {
     public class ProductsController : BaseAPIController
     {
-        private readonly IGenericRepository<Product> _repository;
+        private readonly IGenericRepository<Product> _productRepository;
+        private readonly IGenericRepository<ProductType> _typeRepository;
+        private readonly IGenericRepository<ProductBrand> _brandRepository;
         private readonly IMapper _mapper;
 
-        public ProductsController(IGenericRepository<Product> repository, IMapper mapper)
+        public ProductsController(IGenericRepository<Product> repository, IMapper mapper, IGenericRepository<ProductType> typeRepository, IGenericRepository<ProductBrand> brandRepository)
         {
-            _repository = repository;
+            _productRepository = repository;
             _mapper = mapper;
+            _typeRepository = typeRepository;
+            _brandRepository = brandRepository;
         }
 
         [HttpGet()]
@@ -30,9 +34,9 @@ namespace API.Controllers
 
             var spec = new ProductWithTypesAndBrandsSpecification(productParams);
             var countSpec = new ProductWithFiltersForCountSpecification(productParams);
-            var totalItems = await _repository.CountAsync(countSpec);
+            var totalItems = await _productRepository.CountAsync(countSpec);
 
-            var products = await _repository.GetAllWithSpecificationAsync(spec);
+            var products = await _productRepository.GetAllWithSpecificationAsync(spec);
             var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductResponseDto>>(products);
 
             return new Pagination<ProductResponseDto>(productParams.PageIndex, productParams.PageSize, totalItems, data);
@@ -47,15 +51,31 @@ namespace API.Controllers
         {
             // My solution (it's not so generic if I do this xD)
             //var spec = new ProductWithTypesAndBrandsSpecification();
-            //return await _repository.GetByIdWithSpecificationAsync(spec, id);
+            //return await _productRepository.GetByIdWithSpecificationAsync(spec, id);
 
             var spec = new ProductWithTypesAndBrandsSpecification(id);
-            var product = await _repository.GetByIdWithSpecificationAsync(spec);
+            var product = await _productRepository.GetByIdWithSpecificationAsync(spec);
 
             if (product == null) return NotFound(new ApiResponse(404));
 
             return _mapper.Map<Product, ProductResponseDto>(product);
     
-         }
+        }
+
+        [HttpGet("types")]
+        public async Task<IReadOnlyList<ProductType>> GetTypes()
+        {
+            var types = await _typeRepository.GetAllAsync();
+
+            return types;
+        }
+
+        [HttpGet("brands")]
+        public async Task<IReadOnlyList<ProductBrand>> GetBrands()
+        {
+            var brands = await _brandRepository.GetAllAsync();
+
+            return brands;
+        }
     }
 }
