@@ -9,3 +9,20 @@
   right: 32px;
   text-align: center;
 }
+
+.nav-links {
+  text-decoration: none;
+  color: #343a40;
+
+  &.active {
+    color: orange;
+  }
+}
+
+.logo {
+  cursor: pointer;
+}
+
+// .active {
+//   tex
+// }

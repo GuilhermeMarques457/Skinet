@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Product } from '../shared/models/product';
 import { ShopService } from './shop.service';
-import { map } from 'rxjs';
+import { debounceTime, map } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { Brand } from '../shared/models/brand';
@@ -10,11 +10,19 @@ import { Type } from '../shared/models/type';
 import { ShopParams } from '../shared/models/shopParams';
 import { PagingHeaderComponent } from '../shared/components/paging-header/paging-header.component';
 import { PagerComponent } from '../shared/components/pager/pager.component';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-shop',
   standalone: true,
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     ProductItemComponent,
     PagingHeaderComponent,
@@ -28,8 +36,7 @@ export class ShopComponent {
   brands: Brand[] = [];
   types: Type[] = [];
   shopParams: ShopParams = new ShopParams();
-
-  @ViewChild('search') searchText?: ElementRef;
+  form!: FormGroup;
 
   sortOptions = [
     { name: 'Alphabetical', value: 'name' },
@@ -39,17 +46,30 @@ export class ShopComponent {
 
   totalCount = 0;
 
+  // @ViewChild('search') searchText?: ElementRef;
+
   constructor(private shopService: ShopService) {}
 
   ngOnInit(): void {
     this.getProducts();
     this.getTypes();
     this.getBrands();
+
+    this.form = new FormGroup({
+      search: new FormControl(''),
+    });
+
+    this.form.valueChanges.pipe(debounceTime(700)).subscribe((value) => {
+      if (value && this.form.controls['search'].value) {
+        this.shopParams.search = value.search;
+        this.getProducts();
+      }
+    });
   }
 
   getProducts() {
     this.shopService
-      .getProduct(this.shopParams)
+      .getProducts(this.shopParams)
       .pipe(
         map((response) => {
           this.shopParams.pageNumber = response.pageIndex;
@@ -105,12 +125,12 @@ export class ShopComponent {
 
   onSearch() {
     this.shopParams.pageNumber = 1;
-    this.shopParams.search = this.searchText?.nativeElement.value;
+    this.shopParams.search = this.form.controls['search'].value;
     this.getProducts();
   }
 
   onReset() {
-    if (this.searchText) this.searchText.nativeElement.value = '';
+    this.form.reset();
     this.shopParams = new ShopParams();
     this.getProducts();
   }

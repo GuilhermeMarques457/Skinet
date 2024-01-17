@@ -40,21 +40,25 @@
           [pageSize]="shopParams.pageSize"
           [totalCount]="totalCount"
         ></app-paging-header>
-        <div class="d-flex mt-2">
+        <form class="d-flex mt-2" [formGroup]="form">
           <input
             type="text"
             placeholder="Search"
             class="form-control me-2"
-            #search
+            formControlName="search"
             (keyup.enter)="onSearch()"
           />
-          <button class="btn btn-outline-primary mx-2" (click)="onSearch()">
+          <!-- <button class="btn btn-outline-primary mx-2" (click)="onSearch()">
             Search
-          </button>
-          <button class="btn btn-outline-success mx-2" (click)="onReset()">
+          </button> -->
+          <button
+            class="btn btn-outline-success mx-2"
+            type="button"
+            (click)="onReset()"
+          >
             Reset
           </button>
-        </div>
+        </form>
       </div>
       <div class="row row-cols-3 g-3 mb-5">
         <div class="col" *ngFor="let product of products">
@@ -71,3 +75,5 @@
     </section>
   </div>
 </div>
+
+<!-- <router-outlet></router-outlet> -->
