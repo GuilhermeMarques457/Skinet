@@ -1,12 +1,19 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ErrorResponse } from '../../shared/models/error-response';
 
 @Component({
   selector: 'app-server-error',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './server-error.component.html',
-  styleUrl: './server-error.component.scss'
+  styleUrl: './server-error.component.scss',
 })
 export class ServerErrorComponent {
-
+  error: ErrorResponse;
+  constructor(private router: Router) {
+    const navigation = this.router.getCurrentNavigation();
+    this.error = navigation?.extras?.state?.['error'];
+  }
 }
