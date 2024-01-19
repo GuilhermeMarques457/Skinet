@@ -3,6 +3,7 @@ import { Product } from '../../shared/models/product';
 import { ShopService } from '../shop.service';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { BreadcrumbService } from 'xng-breadcrumb';
 
 @Component({
   selector: 'app-product-details',
@@ -16,8 +17,11 @@ export class ProductDetailsComponent {
 
   constructor(
     private shopService: ShopService,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    private bcService: BreadcrumbService
+  ) {
+    this.bcService.set('@productDetails', ' ');
+  }
 
   ngOnInit() {
     this.loadProduct();
@@ -29,6 +33,7 @@ export class ProductDetailsComponent {
       this.shopService.getProduct(+id).subscribe({
         next: (response) => {
           this.product = response;
+          this.bcService.set('@productDetails', this.product.name);
         },
         error: (err) => {
           console.log(err);
