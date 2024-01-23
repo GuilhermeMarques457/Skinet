@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { SectionHeaderComponent } from './core/section-header/section-header.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { BasketService } from './basket/basket.service';
 
 @Component({
   selector: 'app-root',
@@ -20,5 +21,11 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 })
 export class AppComponent {
   title = 'Client';
-  ngOnInit(): void {}
+
+  constructor(private basketService: BasketService) {}
+
+  ngOnInit(): void {
+    const basketId = localStorage.getItem('basket_id');
+    if (basketId) this.basketService.getBasket(basketId);
+  }
 }

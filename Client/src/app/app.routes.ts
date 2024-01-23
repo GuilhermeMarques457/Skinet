@@ -14,5 +14,15 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./shop/shop.routing').then((r) => r.ShopRouting),
   },
+  {
+    path: 'Basket',
+    loadChildren: () =>
+      import('./basket/basket.routing').then((r) => r.BasketRouting),
+  },
+  {
+    path: 'Checkout',
+    loadChildren: () =>
+      import('./checkout/checkout.routing').then((r) => r.CheckoutRouting),
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

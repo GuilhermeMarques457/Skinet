@@ -11,8 +11,6 @@ import { BreadcrumbModule, BreadcrumbService } from 'xng-breadcrumb';
 })
 export class SectionHeaderComponent {
   constructor(public bcService: BreadcrumbService) {
-    bcService.breadcrumbs$.subscribe((data) => {
-      console.log(data);
-    });
+    bcService.breadcrumbs$.subscribe((data) => {});
   }
 }
