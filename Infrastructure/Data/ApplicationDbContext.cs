@@ -8,7 +8,8 @@ namespace Infrastructure.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions options) : base(options) 
+        //If more than one DbContext we must specify in the DbContextOptions<ContextName>
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) 
         {
             
         }

@@ -20,7 +20,7 @@ namespace API.Errors
                 401 => "Unauthorized, you are not",
                 404 => "Resouce found, it was not",
                 500 => "Server error, contact support",
-                _ => "Unescpected Error"
+                _ => "Unexpected Error"
             };
         }
 

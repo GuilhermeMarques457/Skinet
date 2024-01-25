@@ -1,6 +1,7 @@
 ﻿using API.Errors;
 using Core.Interfaces;
 using Infrastructure.Data;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -8,14 +9,18 @@ using Microsoft.Extensions.DependencyInjection;
 using StackExchange.Redis;
 using System;
 using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace API.Extensions
 {
-    public static class ApplicationServiceExtensions
+    public static class ApplicationServicesExtensions
     {
-        public static IServiceCollection AddApplicationService(this IServiceCollection services, IConfiguration config)
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
         {
-            services.AddControllers();
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+            });
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -35,6 +40,7 @@ namespace API.Extensions
             });
 
             services.AddScoped<IBasketRepository, BasketRepository>();
+            services.AddScoped<ITokenService, TokenService>();
 
             // Adding auto mapper
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
