@@ -21,8 +21,8 @@ namespace API.Extensions
             {
                 options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
             });
-            services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen();
+
+            services.AddSwaggerDocumentation();
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlite(config.GetConnectionString("DefaultConnection"));
@@ -34,7 +34,8 @@ namespace API.Extensions
             // Adding our connection to Redis (it must be Singleton because it will share shared by all users)
             services.AddSingleton<IConnectionMultiplexer>(opt =>
             {
-                var options = ConfigurationOptions.Parse(config.GetConnectionString("Redis"));
+                string redisConnectionString = config.GetConnectionString("Redis");
+                var options = ConfigurationOptions.Parse(redisConnectionString);
 
                 return ConnectionMultiplexer.Connect(options);
             });
