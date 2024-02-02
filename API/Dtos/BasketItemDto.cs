@@ -15,7 +15,7 @@ namespace API.Dtos
         public decimal Price { get; set; }
 
         [Required]
-        [Range(1, int.MaxValue, ErrorMessage = "Quantity must be a positive number")]
+        [Range(1, double.MaxValue, ErrorMessage = "Quantity must be a positive number")]
         public int Quantity { get; set; }
 
         [Required]
