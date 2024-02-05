@@ -1,5 +1,6 @@
 ﻿
 using Core.Entities;
+using Core.Entities.OrderAggregate;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -33,7 +34,14 @@ namespace Infrastructure.Data
                 context.Products.AddRange(products!);
             }
 
-            if(context.ChangeTracker.HasChanges()) await context.SaveChangesAsync();
+            if (!context.DeliveryMethods.Any())
+            {
+                var deliveryData = File.ReadAllText("../Infrastructure/Data/SeedData/delivery.json");
+                var deliveryMethods = JsonSerializer.Deserialize<List<DeliveryMethod>>(deliveryData);
+                context.DeliveryMethods.AddRange(deliveryMethods!);
+            }
+
+            if (context.ChangeTracker.HasChanges()) await context.SaveChangesAsync();
         }
     }
 }

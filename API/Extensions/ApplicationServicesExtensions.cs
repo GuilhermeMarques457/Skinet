@@ -28,9 +28,6 @@ namespace API.Extensions
                 options.UseSqlite(config.GetConnectionString("DefaultConnection"));
             });
 
-            // Registering our generic repository as a service
-            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-
             // Adding our connection to Redis (it must be Singleton because it will share shared by all users)
             services.AddSingleton<IConnectionMultiplexer>(opt =>
             {
@@ -42,6 +39,10 @@ namespace API.Extensions
 
             services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped<ITokenService, TokenService>();
+            services.AddTransient<IOrderService, OrderService>();
+
+            // Registering our generic repository as a service
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             // Adding auto mapper
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
