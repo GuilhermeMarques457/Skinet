@@ -37,9 +37,12 @@ namespace API.Extensions
                 return ConnectionMultiplexer.Connect(options);
             });
 
-            services.AddScoped<IBasketRepository, BasketRepository>();
+            // Injecting our single dbcontext (unit of work make it single)
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ITokenService, TokenService>();
-            services.AddTransient<IOrderService, OrderService>();
+            services.AddScoped<IBasketRepository, BasketRepository>();
+            services.AddScoped<IOrderService, OrderService>();
+  
 
             // Registering our generic repository as a service
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
