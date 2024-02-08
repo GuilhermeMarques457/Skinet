@@ -20,6 +20,7 @@ export class AccountService {
   loadCurrentUser(token: string | null) {
     // this is to ensure that our ReplaySubject will always have one value
     if (token === null) {
+      console.log('entrou load current user');
       this.currentUserSource.next(null);
       return of(null);
     }

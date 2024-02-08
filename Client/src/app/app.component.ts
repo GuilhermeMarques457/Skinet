@@ -23,7 +23,6 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent {
   title = 'Client';
-  private accountSubs$: Subscription = new Subscription();
 
   constructor(
     private basketService: BasketService,
@@ -35,10 +34,6 @@ export class AppComponent {
     this.onLoadCurrentUser();
   }
 
-  ngOnDestroy() {
-    this.accountSubs$.unsubscribe();
-  }
-
   private onLoadBasket() {
     const basketId = localStorage.getItem('basket_id');
     if (basketId) this.basketService.getBasket(basketId);
@@ -47,6 +42,6 @@ export class AppComponent {
   private onLoadCurrentUser() {
     const token = localStorage.getItem('token');
 
-    this.accountSubs$ = this.accountService.loadCurrentUser(token).subscribe();
+    this.accountService.loadCurrentUser(token).subscribe();
   }
 }
