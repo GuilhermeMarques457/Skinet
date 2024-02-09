@@ -1,0 +1,35 @@
+<div class="mt-4" *ngIf="checkoutForm" [formGroup]="checkoutForm">
+  <div class="row" formGroupName="deliveryForm">
+    <div
+      class="col-6 form-group flex-align-center delivery-method-box"
+      *ngFor="let method of deliveryMethods"
+      style="cursor: pointer"
+    >
+      <input
+        style="cursor: pointer"
+        type="radio"
+        class="form-check-input"
+        value="{{ method.id }}"
+        id="{{ method.id }}"
+        formControlName="deliveryMethod"
+        (click)="onSetShippingPrice(method)"
+      />
+      <label
+        for="{{ method.id }}"
+        class="form-check-label ms-2 mb-3"
+        style="cursor: pointer"
+      >
+        <strong>
+          {{ method.shortName }} - {{ method.price | currency }}
+        </strong>
+        <br />
+        <span class="label-description">{{ method.description }}</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+<app-stepper-next-previous
+  [nextStep]="'Review'"
+  [previousStep]="'Address'"
+></app-stepper-next-previous>

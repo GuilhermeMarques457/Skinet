@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Basket, BasketItem, BasketTotals } from '../shared/models/basket';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../shared/models/product';
+import { DeliveryMethod } from '../shared/models/delivery-method';
 
 @Injectable({
   providedIn: 'root',
@@ -15,6 +16,7 @@ export class BasketService {
 
   public basketSource$ = this.basketSource.asObservable();
   public basketTotalSource$ = this.basketTotalSource.asObservable();
+  shipping = 0;
 
   constructor(private http: HttpClient) {}
 
@@ -39,11 +41,15 @@ export class BasketService {
   deleteBasket(basket: Basket) {
     this.http.delete(`${this.baseUrl}basket?id=${basket.id}`).subscribe({
       next: (response) => {
-        this.basketSource.next(null);
-        this.basketTotalSource.next(null);
-        localStorage.removeItem('basket_id');
+        this.deleteLocalBasket();
       },
     });
+  }
+
+  deleteLocalBasket() {
+    this.basketSource.next(null);
+    this.basketTotalSource.next(null);
+    localStorage.removeItem('basket_id');
   }
 
   getCurrentBasketValue() {
@@ -74,6 +80,11 @@ export class BasketService {
 
     if (basket.items.length > 0) this.postBasket(basket);
     else this.deleteBasket(basket);
+  }
+
+  setShippingPrice(deliveryMethod: DeliveryMethod) {
+    this.shipping = deliveryMethod.price;
+    this.calculateTotals();
   }
 
   private upsertBasketItem(
@@ -114,16 +125,16 @@ export class BasketService {
     const basket = this.getCurrentBasketValue();
     if (!basket) return;
 
-    const shipping = 0;
     const subtotal = basket.items.reduce(
       (sum, item) => item.quantity * item.price + sum,
       0
     );
 
-    const total = subtotal + shipping;
-    this.basketTotalSource.next({ shipping, total, subtotal });
+    const total = subtotal + this.shipping;
+    this.basketTotalSource.next({ shipping: this.shipping, total, subtotal });
   }
 
+  // THIS IS A WAY OF CHECKING WHICH TYPE IS MY OBJECT XD (VERY USEFULL)
   private isProduct(item: Product | BasketItem): item is Product {
     return (item as Product).productBrand !== undefined;
   }

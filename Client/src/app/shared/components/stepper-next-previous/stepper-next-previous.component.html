@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-between flex-row mt-3">
+  <button
+    class="btn btn-outline-primary"
+    *ngIf="previousStep === 'Basket'"
+    routerLink="/{{ previousStep }}"
+  >
+    <i class="fa fa-angle-left"></i> Back to {{ previousStep }}
+  </button>
+  <button
+    class="btn btn-outline-primary"
+    *ngIf="previousStep !== 'Basket'"
+    cdkStepperPrevious
+  >
+    <i class="fa fa-angle-left"></i> Back to {{ previousStep }}
+  </button>
+  <button
+    class="btn btn-primary"
+    cdkStepperNext
+    *ngIf="nextStep !== 'Submit Order'"
+  >
+    Go to {{ nextStep }} <i class="fa fa-angle-right"></i>
+  </button>
+  <button
+    class="btn btn-primary"
+    cdkStepperNext
+    *ngIf="nextStep === 'Submit Order'"
+    (click)="onSubmitStepper()"
+  >
+    Submit Order <i class="fa fa-angle-right"></i>
+  </button>
+</div>

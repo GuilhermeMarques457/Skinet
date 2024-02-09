@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { BehaviorSubject, ReplaySubject, map, of, tap } from 'rxjs';
-import { User } from '../shared/models/user';
+import { Address, User } from '../shared/models/user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -20,7 +20,6 @@ export class AccountService {
   loadCurrentUser(token: string | null) {
     // this is to ensure that our ReplaySubject will always have one value
     if (token === null) {
-      console.log('entrou load current user');
       this.currentUserSource.next(null);
       return of(null);
     }
@@ -68,6 +67,14 @@ export class AccountService {
     return this.http.get<boolean>(
       `${this.baseUrl}account/email-exists?email=${email}`
     );
+  }
+
+  getUserAddress() {
+    return this.http.get<Address>(`${this.baseUrl}account/address`);
+  }
+
+  updateUserAddress(address: Address) {
+    return this.http.put<Address>(`${this.baseUrl}account/address`, address);
   }
 
   private setUserAndToken(user: User) {

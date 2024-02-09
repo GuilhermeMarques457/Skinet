@@ -4,11 +4,17 @@ import { CommonModule } from '@angular/common';
 import { OrderTotalsComponent } from '../shared/components/order-totals/order-totals.component';
 import { BasketItem } from '../shared/models/basket';
 import { RouterModule } from '@angular/router';
+import { BasketSummaryComponent } from '../shared/components/basket-summary/basket-summary.component';
 
 @Component({
   selector: 'app-basket',
   standalone: true,
-  imports: [CommonModule, OrderTotalsComponent, RouterModule],
+  imports: [
+    CommonModule,
+    OrderTotalsComponent,
+    RouterModule,
+    BasketSummaryComponent,
+  ],
   templateUrl: './basket.component.html',
   styleUrl: './basket.component.scss',
 })
@@ -19,7 +25,10 @@ export class BasketComponent {
     this.basketService.addItemToBasket(item);
   }
 
-  onRemoveItem(id: number, quantity: number) {
-    this.basketService.removeItemFromBasket(id, quantity);
+  onRemoveItem(basketEvent: { id: number; quantity: number }) {
+    this.basketService.removeItemFromBasket(
+      basketEvent.id,
+      basketEvent.quantity
+    );
   }
 }

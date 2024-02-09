@@ -7,7 +7,7 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { Brand } from '../shared/models/brand';
 import { Type } from '../shared/models/type';
 
-import { ShopParams } from '../shared/models/shopParams';
+import { ShopParams } from '../shared/models/shop-params';
 import { PagingHeaderComponent } from '../shared/components/paging-header/paging-header.component';
 import { PagerComponent } from '../shared/components/pager/pager.component';
 import {
