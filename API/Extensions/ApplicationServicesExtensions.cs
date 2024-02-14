@@ -42,6 +42,8 @@ namespace API.Extensions
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped<IOrderService, OrderService>();
+
+            services.AddScoped<IPaymentService, PaymentService>();
   
 
             // Registering our generic repository as a service
