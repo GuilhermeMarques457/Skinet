@@ -50,5 +50,22 @@
   {
     "Id": 13,
     "Name": "Santa Monica"
+  },
+  {
+    "Id": 14,
+    "Name": "Avalanche Software"
+  },
+  {
+    "Id": 15,
+    "Name": "BlueTwelve Studio"
+  },
+  {
+    "Id": 16,
+    "Name": "From Software"
+  },
+  {
+    "Id": 17,
+    "Name": "Team Cherry"
   }
+
 ]

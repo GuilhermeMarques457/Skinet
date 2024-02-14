@@ -54,5 +54,17 @@
   {
     "Id": 14,
     "Name": "Hack & Slash"
+  },
+  {
+    "Id": 15,
+    "Name": "Open World"
+  },
+  {
+    "Id": 16,
+    "Name": "Souls Like"
+  },
+  {
+    "Id": 17,
+    "Name": "Stealth"
   }
 ]

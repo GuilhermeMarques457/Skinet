@@ -13,6 +13,13 @@ namespace Infrastructure.Data
     {
         public static async Task SeedAsync(ApplicationDbContext context)
         {
+            context.ProductBrands.RemoveRange(context.ProductBrands);
+            context.Products.RemoveRange(context.Products);
+            context.ProductTypes.RemoveRange(context.ProductTypes);
+
+            context.SaveChanges();
+
+            var productsTest = context.Products.ToList();
             if (!context.ProductBrands.Any())
             {
                 var brandsData = File.ReadAllText("../Infrastructure/Data/SeedData/brands.json");
