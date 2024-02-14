@@ -1,56 +1,56 @@
 [
   {
-    "Name": "Angular Speedster Board 2000",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Name": "Resident Evil 4",
+    "Description": "An acclaimed action and horror game developed by Capcom. Originally released in 2005, the game revolutionized the Resident Evil series with its innovative approach and immersive atmosphere. The plot follows special agent Leon S. Kennedy, sent on a mission to rescue the daughter of the President of the United States, who has been kidnapped by a mysterious cult in a remote European village.",
     "Price": 200,
     "PictureUrl": "images/products/sb-ang1.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 1
+    "ProductTypeId": 11,
+    "ProductBrandId": 9
   },
   {
-    "Name": "Green Angular Board 3000",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 150,
+    "Name": "Outer Wilds",
+    "Description": "An award-winning exploration and puzzle-solving game developed by Mobius Digital. Embark on a cosmic journey as an astronaut trapped in a time loop, uncovering the mysteries of a dynamic and interconnected solar system..",
+    "Price": 50,
     "PictureUrl": "images/products/sb-ang2.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 1
+    "ProductTypeId": 3,
+    "ProductBrandId": 10
   },
   {
-    "Name": "Core Board Speed Rush 3",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 180,
+    "Name": "Tunic",
+    "Description": "An indie action-adventure game developed by Andrew Shouldice. Players control a small fox exploring a mysterious world, solving puzzles, battling enemies, and uncovering secrets. With its charming art style and engaging gameplay",
+    "Price": 50,
     "PictureUrl": "images/products/sb-core1.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 2
+    "ProductTypeId": 3,
+    "ProductBrandId": 11
   },
   {
-    "Name": "Net Core Super Board",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Name": "The Legend of Zelda: Ocarina of Time",
+    "Description": "A classic action-adventure game developed by Nintendo. Released in 1998 for the Nintendo 64, it follows the protagonist, Link, on a quest to stop the evil Ganondorf and save the land of Hyrule. Notable for its innovative 3D gameplay, intricate dungeons, and the use of the musical Ocarina to solve puzzles, the game is celebrated as one of the greatest video games of all time.",
     "Price": 300,
     "PictureUrl": "images/products/sb-core2.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 2
+    "ProductTypeId": 11,
+    "ProductBrandId": 1
   },
   {
-    "Name": "React Board Super Whizzy Fast",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 250,
+    "Name": "Resident Evil 7: Biohazard",
+    "Description": "A survival horror game developed and published by Capcom. Released in 2017, it marks a significant departure from the series' traditional style by adopting a first-person perspective. The game follows Ethan Winters, who searches for his missing wife in a derelict plantation mansion in Dulvey, Louisiana. Immerse yourself in a chilling atmosphere, solve puzzles, and confront horrifying creatures as the narrative unfolds, delivering a tense and terrifying experience in the Resident Evil universe.",
+    "Price": 350,
     "PictureUrl": "images/products/sb-react1.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 4
+    "ProductTypeId": 11,
+    "ProductBrandId": 9
   },
   {
-    "Name": "Typescript Entry Board",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+    "Name": "Devil May Cry 3: Dante's Awakening",
+    "Description": "An action-packed hack-and-slash game developed and published by Capcom. Initially released in 2005, it serves as a prequel to the original Devil May Cry series. Players control Dante, a stylish and demon-slaying protagonist, as he battles through challenging levels and faces formidable foes. Known for its fast-paced combat, intricate combos, and engaging story,",
     "Price": 120,
     "PictureUrl": "images/products/sb-ts1.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 5
+    "ProductTypeId": 14,
+    "ProductBrandId": 9
   },
   {
-    "Name": "Core Blue Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 10,
+    "Name": "Red Dead Redemption 2",
+    "Description": "an epic action-adventure game developed and published by Rockstar Games. Released in 2018, it serves as a prequel to the original Red Dead Redemption. The game is set in the late 1800s and follows Arthur Morgan, an outlaw and member of the Van der Linde gang, as they navigate the changing landscapes of the American Wild West.",
+    "Price": 350,
     "PictureUrl": "images/products/hat-core1.png",
     "ProductTypeId": 2,
     "ProductBrandId": 2

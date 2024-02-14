@@ -16,11 +16,12 @@ export interface Order {
   subtotal: number;
   total: number;
   status: string;
+  orderDate: Date;
 }
 
 export interface OrderItem {
   productId: number;
-  producName: string;
+  productName: string;
   pictureUrl: string;
   price: number;
   quantity: number;

@@ -1,18 +1,58 @@
 [
   {
     "Id": 1,
-    "Name": "Boards"
+    "Name": "FPS"
   },
   {
     "Id": 2,
-    "Name": "Hats"
+    "Name": "Battle Royale"
   },
   {
     "Id": 3,
-    "Name": "Boots"
+    "Name": "Adventure"
   },
   {
     "Id": 4,
-    "Name": "Gloves"
+    "Name": "PVP"
+  },
+  {
+    "Id": 5,
+    "Name": "RTS"
+  },
+  {
+    "Id": 6,
+    "Name": "MOBA"
+  },
+  {
+    "Id": 7,
+    "Name": "RPG"
+  },
+  {
+    "Id": 8,
+    "Name": "MMORPG"
+  },
+  {
+    "Id": 9,
+    "Name": "Action"
+  },
+  {
+    "Id": 10,
+    "Name": "Puzzle"
+  },
+  {
+    "Id": 11,
+    "Name": "Horror"
+  },
+  {
+    "Id": 12,
+    "Name": "Strategy"
+  },
+  {
+    "Id": 13,
+    "Name": "Sports"
+  },
+  {
+    "Id": 14,
+    "Name": "Hack & Slash"
   }
 ]

@@ -5,13 +5,13 @@ import { take } from 'rxjs';
 
 export const jwtInterceptor: HttpInterceptorFn = (req, next) => {
   const accountService = inject(AccountService);
-  let token: string | undefined;
+  let token: string | null = localStorage.getItem('token');
 
-  accountService.currentUser$.pipe(take(1)).subscribe({
-    next: (data) => {
-      token = data?.token;
-    },
-  });
+  // accountService.currentUser$.pipe(take(1)).subscribe({
+  //   next: (data) => {
+  //     token = data?.token;
+  //   },
+  // });
 
   if (token) {
     req = req.clone({

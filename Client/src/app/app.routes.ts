@@ -29,5 +29,10 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./account/account.routing').then((r) => r.AccountRouting),
   },
+  {
+    path: 'Orders',
+    loadChildren: () =>
+      import('./order/order.routing').then((r) => r.OrderRouting),
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

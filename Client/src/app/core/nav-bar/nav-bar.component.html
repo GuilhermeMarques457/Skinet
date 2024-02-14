@@ -23,9 +23,15 @@
       [routerLinkActiveOptions]="{ exact: true }"
       >Shop</a
     >
-    <a class="p-2 nav-links" routerLink="/test-error" routerLinkActive="active"
+    <!-- <a class="p-2 nav-links" routerLink="/test-error" routerLinkActive="active"
       >Errors</a
-    >
+    > -->
+
+    <ng-container *ngIf="accountService.currentUser$ | async">
+      <a class="p-2 nav-links" routerLink="/Orders" routerLinkActive="active"
+        >Orders</a
+      >
+    </ng-container>
   </nav>
   <div class="d-flex align-items-center">
     <a routerLink="/Basket" class="position-relative">
