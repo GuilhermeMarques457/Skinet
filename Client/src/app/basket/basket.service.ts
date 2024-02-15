@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 import { Basket, BasketItem, BasketTotals } from '../shared/models/basket';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../shared/models/product';
@@ -19,6 +19,19 @@ export class BasketService {
   shipping = 0;
 
   constructor(private http: HttpClient) {}
+
+  createPaymentIntent() {
+    return this.http
+      .post<Basket>(
+        `${this.baseUrl}payments/${this.getCurrentBasketValue()?.id}`,
+        {}
+      )
+      .pipe(
+        map((basket) => {
+          this.basketSource.next(basket);
+        })
+      );
+  }
 
   getBasket(id: string) {
     return this.http.get<Basket>(`${this.baseUrl}basket?id=${id}`).subscribe({
@@ -83,8 +96,13 @@ export class BasketService {
   }
 
   setShippingPrice(deliveryMethod: DeliveryMethod) {
-    this.shipping = deliveryMethod.price;
-    this.calculateTotals();
+    const basket = this.getCurrentBasketValue();
+
+    if (basket) {
+      basket.shippingPrice = deliveryMethod.price;
+      basket.deliveryMethodId = deliveryMethod.id;
+      this.postBasket(basket);
+    }
   }
 
   private upsertBasketItem(
@@ -130,8 +148,12 @@ export class BasketService {
       0
     );
 
-    const total = subtotal + this.shipping;
-    this.basketTotalSource.next({ shipping: this.shipping, total, subtotal });
+    const total = subtotal + basket.shippingPrice;
+    this.basketTotalSource.next({
+      shipping: basket.shippingPrice,
+      total,
+      subtotal,
+    });
   }
 
   // THIS IS A WAY OF CHECKING WHICH TYPE IS MY OBJECT XD (VERY USEFULL)

@@ -16,10 +16,20 @@
   <button
     class="btn btn-primary"
     cdkStepperNext
-    *ngIf="nextStep !== 'Submit Order'"
+    *ngIf="nextStep !== 'Submit Order' && nextStep !== 'Payment'"
   >
     Go to {{ nextStep }} <i class="fa fa-angle-right"></i>
   </button>
+  <!-- This is because I wanted to make this a component T-T -->
+  <button
+    class="btn btn-primary"
+    cdkStepperNext
+    *ngIf="nextStep === 'Payment'"
+    (click)="onCreatePaymentIntentStepper()"
+  >
+    Go to {{ nextStep }} <i class="fa fa-angle-right"></i>
+  </button>
+  <!-- This too -->
   <button
     class="btn btn-primary"
     cdkStepperNext

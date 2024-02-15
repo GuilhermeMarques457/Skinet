@@ -37,6 +37,8 @@ export class ShopComponent {
   types: Type[] = [];
   shopParams: ShopParams = new ShopParams();
   form!: FormGroup;
+  seeAllBrands = false;
+  seeAllTypes = false;
 
   sortOptions = [
     { name: 'Alphabetical', value: 'name' },
@@ -133,5 +135,13 @@ export class ShopComponent {
     this.form.reset();
     this.shopParams = new ShopParams();
     this.getProducts();
+  }
+
+  onSeeAllBrands() {
+    this.seeAllBrands = true;
+  }
+
+  onSeeAllTypes() {
+    this.seeAllTypes = true;
   }
 }

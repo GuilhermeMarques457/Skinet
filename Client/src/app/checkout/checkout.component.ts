@@ -10,6 +10,7 @@ import { CheckoutSuccessComponent } from './checkout-success/checkout-success.co
 import { CheckoutDeliveryComponent } from './checkout-delivery/checkout-delivery.component';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AccountService } from '../account/account.service';
+import { BasketService } from '../basket/basket.service';
 
 @Component({
   selector: 'app-checkout',
@@ -31,11 +32,13 @@ import { AccountService } from '../account/account.service';
 export class CheckoutComponent {
   constructor(
     private fb: FormBuilder,
-    private accountService: AccountService
+    private accountService: AccountService,
+    private basketService: BasketService
   ) {}
 
   ngOnInit() {
     this.onGetAddressFormValues();
+    this.onGetDeliveryMethodValue();
   }
 
   checkoutForm = this.fb.group({
@@ -61,5 +64,15 @@ export class CheckoutComponent {
         address && this.checkoutForm.get('addressForm')?.patchValue(address);
       },
     });
+  }
+
+  private onGetDeliveryMethodValue() {
+    const basket = this.basketService.getCurrentBasketValue();
+    if (basket && basket.deliveryMethodId) {
+      this.checkoutForm
+        .get('deliveryForm')
+        ?.get('deliveryMethod')
+        ?.patchValue(basket.deliveryMethodId.toString());
+    }
   }
 }

@@ -4,5 +4,6 @@
   <app-stepper-next-previous
     [nextStep]="'Payment'"
     [previousStep]="'Delivery'"
+    (paymentIntentStepper)="onCreatePaymentIntent($event)"
   ></app-stepper-next-previous>
 </div>

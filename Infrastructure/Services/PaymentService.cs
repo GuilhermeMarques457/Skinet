@@ -54,7 +54,7 @@ namespace Infrastructure.Services
                 var options = new PaymentIntentCreateOptions
                 {
                     Amount = (long)basket.Items.Sum(x => x.Quantity * (x.Price * 100)) + (long)shippingPrice * 100,
-                    Currency = "usd",
+                    Currency = "brl",
                     PaymentMethodTypes = new List<string> { "card" }
                 };
 

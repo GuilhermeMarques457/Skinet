@@ -15,8 +15,13 @@ export class StepperNextPreviousComponent {
   @Input() previousStep: string = '';
 
   @Output() submitStepper = new EventEmitter<any>();
+  @Output() paymentIntentStepper = new EventEmitter<any>();
 
   onSubmitStepper() {
     this.submitStepper.emit();
+  }
+
+  onCreatePaymentIntentStepper() {
+    this.paymentIntentStepper.emit();
   }
 }
