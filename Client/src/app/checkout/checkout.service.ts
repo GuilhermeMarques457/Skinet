@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { DeliveryMethod } from '../shared/models/delivery-method';
-import { map } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 import { Order, OrderToCreate } from '../shared/models/order';
 
 @Injectable({
@@ -10,7 +10,17 @@ import { Order, OrderToCreate } from '../shared/models/order';
 })
 export class CheckoutService {
   baseUrl = environment.apiUrl;
+  loading$ = new BehaviorSubject<boolean>(false);
+
   constructor(private http: HttpClient) {}
+
+  setLoadingState(loadingState: boolean) {
+    this.loading$.next(loadingState);
+  }
+
+  getLoadingState() {
+    return this.loading$;
+  }
 
   getDeliveryMethods() {
     return this.http

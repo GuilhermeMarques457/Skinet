@@ -23,14 +23,17 @@ namespace Infrastructure.Services
             _config = config;
         }
 
-        public async Task<CostumerBasket> UpsertPaymentIntent(string basketId)
+        public async Task<CostumerBasket?> UpsertPaymentIntent(string basketId)
         {
             StripeConfiguration.ApiKey = _config["StripeSettings:SecretKey"];
 
             var basket = await _basketRepository.GetBasketAsync(basketId);
+
+            if (basket == null) return null;
+
             var shippingPrice = 0m;
 
-            if(basket.DeliveryMethodId.HasValue)
+            if (basket.DeliveryMethodId.HasValue)
             {
                 var deliveryMethod = await _unitOfWork.Repository<DeliveryMethod>().GetByIdAsync((int)basket.DeliveryMethodId);
 
@@ -41,8 +44,7 @@ namespace Infrastructure.Services
             {
                 var productItem = await _unitOfWork.Repository<Product>().GetByIdAsync(item.Id);
 
-                if(item.Price != productItem.Price)
-                    item.Price = productItem.Price;
+                if (item.Price != productItem.Price) item.Price = productItem.Price;
             }
 
             var service = new PaymentIntentService();

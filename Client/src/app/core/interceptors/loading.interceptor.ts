@@ -6,7 +6,14 @@ import { inject } from '@angular/core';
 export const loadingInterceptor: HttpInterceptorFn = (req, next) => {
   const busyService = inject(BusyService);
 
-  if (!req.url.includes('email-exists')) busyService.busy();
+  if (
+    req.url.includes('email-exists') ||
+    (req.method === 'POST' && req.url.includes('Orders'))
+  ) {
+    return next(req);
+  }
+
+  busyService.busy();
 
   return next(req).pipe(
     delay(500),

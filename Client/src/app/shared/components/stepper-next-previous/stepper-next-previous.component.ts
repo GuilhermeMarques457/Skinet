@@ -2,6 +2,8 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CheckoutService } from '../../../checkout/checkout.service';
+import { Subscription, debounceTime, distinctUntilChanged } from 'rxjs';
 
 @Component({
   selector: 'app-stepper-next-previous',
@@ -16,6 +18,26 @@ export class StepperNextPreviousComponent {
 
   @Output() submitStepper = new EventEmitter<any>();
   @Output() paymentIntentStepper = new EventEmitter<any>();
+
+  loading = false;
+
+  loadingSubs$ = new Subscription();
+
+  constructor(private checkoutService: CheckoutService) {}
+
+  ngOnInit() {
+    if (this.nextStep == 'Submit Order') {
+      this.loadingSubs$ = this.checkoutService
+        .getLoadingState()
+        .subscribe((loadingState) => {
+          this.loading = loadingState;
+        });
+    }
+  }
+
+  ngOnDestroy() {
+    this.loadingSubs$.unsubscribe();
+  }
 
   onSubmitStepper() {
     this.submitStepper.emit();

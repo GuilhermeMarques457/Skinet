@@ -1,4 +1,8 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import {
+  ApplicationConfig,
+  LOCALE_ID,
+  importProvidersFrom,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import {
@@ -13,6 +17,10 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { errorInterceptor } from './core/interceptors/error.interceptor';
 import { loadingInterceptor } from './core/interceptors/loading.interceptor';
 import { jwtInterceptor } from './core/interceptors/jwt.interceptor';
+
+import { DEFAULT_CURRENCY_CODE } from '@angular/core';
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
 
 export const appConfig: ApplicationConfig = {
   providers: [
