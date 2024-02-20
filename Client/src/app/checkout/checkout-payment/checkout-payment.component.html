@@ -31,6 +31,7 @@
 </div>
 
 <app-stepper-next-previous
+  [formIsValid]="checkoutForm?.valid"
   [nextStep]="'Submit Order'"
   [previousStep]="'Review'"
   (submitStepper)="onSubmitOrder()"

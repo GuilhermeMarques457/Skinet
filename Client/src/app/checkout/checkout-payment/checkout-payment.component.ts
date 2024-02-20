@@ -45,6 +45,10 @@ export class CheckoutPaymentComponent {
   cardExpiry?: StripeCardExpiryElement;
   cardCvc?: StripeCardCvcElement;
 
+  cardNumberComplete = false;
+  cardExpiryComplete = false;
+  cardCvcComplete = false;
+
   cardErrors: any;
 
   constructor(
@@ -64,6 +68,7 @@ export class CheckoutPaymentComponent {
           this.cardNumber = elements.create('cardNumber');
           this.cardNumber.mount(this.cardNumberEl?.nativeElement);
           this.cardNumber.on('change', (event) => {
+            this.cardNumberComplete = event.complete;
             if (event.error) this.cardErrors = event.error.message;
             else this.cardErrors = null;
           });
@@ -71,6 +76,7 @@ export class CheckoutPaymentComponent {
           this.cardCvc = elements.create('cardCvc');
           this.cardCvc.mount(this.cardCvcEl?.nativeElement);
           this.cardCvc.on('change', (event) => {
+            this.cardCvcComplete = event.complete;
             if (event.error) this.cardErrors = event.error.message;
             else this.cardErrors = null;
           });
@@ -78,6 +84,7 @@ export class CheckoutPaymentComponent {
           this.cardExpiry = elements.create('cardExpiry');
           this.cardExpiry.mount(this.cardExpiryEl?.nativeElement);
           this.cardExpiry.on('change', (event) => {
+            this.cardExpiryComplete = event.complete;
             if (event.error) this.cardErrors = event.error.message;
             else this.cardErrors = null;
           });
@@ -86,18 +93,27 @@ export class CheckoutPaymentComponent {
     );
   }
 
+  get paymentFormComplete() {
+    return (
+      this.checkoutForm?.get('paymentForm')?.valid &&
+      this.cardCvcComplete &&
+      this.cardExpiryComplete &&
+      this.cardNumberComplete
+    );
+  }
+
   async onSubmitOrder() {
     this.checkoutService.setLoadingState(true);
 
     const basket = this.basketService.getCurrentBasketValue();
-    if (!basket) return;
+    if (!basket) throw new Error('Cannot get your basket');
 
     try {
       const createdOrder = await this.onCreateOrder(basket);
       const paymentResult = await this.onConfirmPaymentWithStripe(basket);
 
       if (paymentResult.paymentIntent) {
-        this.basketService.deleteLocalBasket();
+        this.basketService.deleteBasket(basket);
 
         // This is to send the order as an extra to the next redirected page
         const navigationExtras: NavigationExtras = { state: createdOrder };
@@ -109,7 +125,6 @@ export class CheckoutPaymentComponent {
     } catch (error: any) {
       // Displaying error thrown by me
       this.toastr.error(error.message);
-      console.log(error);
     } finally {
       this.checkoutService.setLoadingState(false);
     }

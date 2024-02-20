@@ -50,6 +50,7 @@
 </div>
 
 <app-stepper-next-previous
+  [formIsValid]="checkoutForm?.get('addressForm')?.valid"
   [nextStep]="'Delivery'"
   [previousStep]="'Basket'"
 ></app-stepper-next-previous>

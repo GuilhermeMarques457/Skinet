@@ -4,6 +4,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CheckoutService } from '../../../checkout/checkout.service';
 import { Subscription, debounceTime, distinctUntilChanged } from 'rxjs';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-stepper-next-previous',
@@ -15,6 +16,7 @@ import { Subscription, debounceTime, distinctUntilChanged } from 'rxjs';
 export class StepperNextPreviousComponent {
   @Input() nextStep: string = '';
   @Input() previousStep: string = '';
+  @Input() formIsValid?: boolean = false;
 
   @Output() submitStepper = new EventEmitter<any>();
   @Output() paymentIntentStepper = new EventEmitter<any>();

@@ -4,6 +4,7 @@ import { OrderService } from '../order.service';
 import { ActivatedRoute } from '@angular/router';
 import { Order } from '../../shared/models/order';
 import { BreadcrumbService } from 'xng-breadcrumb';
+import { Subscription, take } from 'rxjs';
 
 @Component({
   selector: 'app-order-detailed',
@@ -29,14 +30,21 @@ export class OrderDetailedComponent {
       },
     });
 
-    this.orderService.getOrderById(this.orderId).subscribe({
-      next: (order) => {
-        this.order = order;
+    this.orderService
+      .getOrderById(this.orderId)
+      .pipe(take(1))
+      .subscribe({
+        next: (order) => {
+          this.order = order;
 
-        this.bcService.breadcrumbs$.subscribe((data) => {
-          data[data.length - 1].label = `Order# ${order.id} - ${order.status}`;
-        });
-      },
-    });
+          this.bcService.breadcrumbs$
+            .subscribe((data) => {
+              data[
+                data.length - 1
+              ].label = `Order#${order.id} - ${order.status}`;
+            })
+            .unsubscribe();
+        },
+      });
   }
 }

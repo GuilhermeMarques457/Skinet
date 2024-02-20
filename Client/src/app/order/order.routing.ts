@@ -10,6 +10,5 @@ export const OrderRouting: Route[] = [
   {
     path: ':id',
     component: OrderDetailedComponent,
-    data: { breadcrumb: 'Order' },
   },
 ];
