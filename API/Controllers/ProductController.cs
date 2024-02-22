@@ -27,8 +27,9 @@ namespace API.Controllers
             _brandRepository = brandRepository;
         }
 
-        [HttpGet()]
-        public async Task<Pagination<ProductResponseDto>> GetProducts([FromQuery] ProductSpecificationParameters productParams)
+        [Cached(600)]
+        [HttpGet]
+        public async Task<ActionResult<Pagination<ProductResponseDto>>> GetProducts([FromQuery] ProductSpecificationParameters productParams)
         {
             // productParams.Sort = productParams.Sort ?? "nameAsc";
 
@@ -39,43 +40,41 @@ namespace API.Controllers
             var products = await _productRepository.GetAllWithSpecificationAsync(spec);
             var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductResponseDto>>(products);
 
-            return new Pagination<ProductResponseDto>(productParams.PageIndex, productParams.PageSize, totalItems, data);
+            return Ok(new Pagination<ProductResponseDto>(productParams.PageIndex, productParams.PageSize, totalItems, data));
         }
 
-
+        [Cached(600)]
         [HttpGet("{id}")]
         // Saying to swagger which type of result we will be sending back
         // [ProducesResponseType(StatusCodes.Status200OK)]
         // [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ProductResponseDto>> GetProductById(int id)
         {
-            // My solution (it's not so generic if I do this xD)
-            //var spec = new ProductWithTypesAndBrandsSpecification();
-            //return await _productRepository.GetByIdWithSpecificationAsync(spec, id);
-
             var spec = new ProductWithTypesAndBrandsSpecification(id);
             var product = await _productRepository.GetByIdWithSpecificationAsync(spec);
 
             if (product == null) return NotFound(new ApiResponse(404));
 
-            return _mapper.Map<Product, ProductResponseDto>(product);
+            return Ok(_mapper.Map<Product, ProductResponseDto>(product));
     
         }
 
+        [Cached(600)]
         [HttpGet("types")]
-        public async Task<IReadOnlyList<ProductType>> GetTypes()
+        public async Task<ActionResult<IReadOnlyList<ProductType>>> GetTypes()
         {
             var types = await _typeRepository.GetAllAsync();
 
-            return types;
+            return Ok(types);
         }
 
+        [Cached(600)]
         [HttpGet("brands")]
-        public async Task<IReadOnlyList<ProductBrand>> GetBrands()
+        public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetBrands()
         {
             var brands = await _brandRepository.GetAllAsync();
 
-            return brands;
+            return Ok(brands);
         }
     }
 }

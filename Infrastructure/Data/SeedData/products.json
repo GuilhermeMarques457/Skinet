@@ -191,10 +191,92 @@
   {
     "Id": 22,
     "Name": "Fortnite",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Description": "It's a popular and highly successful battle royale game developed and published by Epic Games. It was first released in 2017 and is available on multiple platforms, including PlayStation, Xbox, Nintendo Switch, PC, Mac, iOS, and Android devices.",
     "Price": 0,
     "PictureUrl": "images/products/fortnite.jpg",
     "ProductTypeId": 2,
     "ProductBrandId": 4
+  },
+  {
+    "Id": 23,
+    "Name": "Halo 4",
+    "Description": "It's a popular science fiction first-person shooter (FPS) video game franchise developed by Bungie, and later by 343 Industries, and published by Xbox Game Studios. The series has become one of the most successful and iconic in the gaming industry.",
+    "Price": 150,
+    "PictureUrl": "images/products/halo-4.jpg",
+    "ProductTypeId": 1,
+    "ProductBrandId": 3
+  },
+  {
+    "Id": 24,
+    "Name": "World of Warcraft (WoW)",
+    "Description": "A massively multiplayer online role-playing game where players explore a vast fantasy world, complete quests, engage in player versus environment and player versus player activities, and interact with other players from around the globe. Released in 2004, WoW has become one of the most iconic and influential games in the MMORPG genre, featuring various races, classes, and a rich lore set in the high-fantasy universe of Azeroth.",
+    "Price": 0,
+    "PictureUrl": "images/products/wow.jpg",
+    "ProductTypeId": 8,
+    "ProductBrandId": 6
+  },
+  {
+    "Id": 25,
+    "Name": "FIFA 23",
+    "Description": "A series of popular football (soccer) simulation video games developed and published by Electronic Arts (EA)",
+    "Price": 350,
+    "PictureUrl": "images/products/fifa-23.jpg",
+    "ProductTypeId": 13,
+    "ProductBrandId": 7
+  },
+  {
+    "Id": 26,
+    "Name": "Valorant",
+    "Description": "A tactical first-person shooter (FPS) game developed and published by Riot Games. In Valorant, two teams of five players each compete against each other in rounds, with one team trying to plant a bomb (spike) and the other team trying to defuse it. Players choose characters with unique abilities, and strategic teamwork is key to success. The game combines precise gunplay with special abilities, creating a blend of strategy and skill.",
+    "Price": 0,
+    "PictureUrl": "images/products/valorant.jpg",
+    "ProductTypeId": 1,
+    "ProductBrandId": 8
+  },
+  {
+    "Id": 27,
+    "Name": "Bully",
+    "Description": "An action-adventure video game developed by Rockstar Vancouver and published by Rockstar Games. It was initially released in 2006 for PlayStation 2 and later for other platforms. In Bully, players take on the role of Jimmy Hopkins, a teenager who navigates through the social hierarchy of a fictional boarding school called Bullworth Academy. The game features open-world exploration, various missions, and a storyline that involves school life, social challenges, and humorous interactions with other characters.",
+    "Price": 120,
+    "PictureUrl": "images/products/bully.jpg",
+    "ProductTypeId": 15,
+    "ProductBrandId": 12
+  },
+  {
+    "Id": 28,
+    "Name": "Grand Theft Auto: San Andreas",
+    "Description": "An action-adventure game developed by Rockstar North and published by Rockstar Games. It was initially released for PlayStation 2 in 2004 and later for other platforms, including Xbox, Microsoft Windows, Mac OS, and various consoles and mobile devices.",
+    "Price": 100,
+    "PictureUrl": "images/products/gta-san-andreas.jpg",
+    "ProductTypeId": 15,
+    "ProductBrandId": 12
+  },
+  {
+    "Id": 29,
+    "Name": "Resident Evil Village",
+    "Description": "A survival horror game, the eighth installment in the Resident Evil series. Released in 2021, it follows Ethan Winters as he searches for his kidnapped daughter in a mysterious village filled with supernatural threats and iconic Resident Evil characters.",
+    "Price": 300,
+    "PictureUrl": "images/products/resident-evil-village.jpg",
+    "ProductTypeId": 11,
+    "ProductBrandId": 9
+  },
+  {
+    "Id": 30,
+    "Name": "Resident Evil HD Remaster",
+    "Description": "An updated version of the original Resident Evil game, released in 2015. It features improved graphics, audio, and controls while preserving the classic survival horror experience. The remaster offers new camera options, additional content, and is available on various platforms, including PlayStation, Xbox, and PC.",
+    "Price": 150,
+    "PictureUrl": "images/products/resident-evil-hd.jpg",
+    "ProductTypeId": 11,
+    "ProductBrandId": 9
+  },
+  {
+    "Id": 31,
+    "Name": "Resident Evil 2 Remake",
+    "Description": "Is a modernized version of the 1998 classic, featuring updated graphics, revamped gameplay with an over-the-shoulder perspective, and faithful reimagining of the original survival horror experience.",
+    "Price": 300,
+    "PictureUrl": "images/products/resident-evil-2-remake.jpg",
+    "ProductTypeId": 11,
+    "ProductBrandId": 9
   }
+
 ]

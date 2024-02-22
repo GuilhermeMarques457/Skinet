@@ -37,17 +37,18 @@ namespace API.Extensions
                 return ConnectionMultiplexer.Connect(options);
             });
 
+            services.AddSingleton<IResponseCacheService, ResponseCacheService>();
+
             // Injecting our single dbcontext (unit of work make it single)
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ITokenService, TokenService>();
-            services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped<IOrderService, OrderService>();
-
             services.AddScoped<IPaymentService, PaymentService>();
   
 
             // Registering our generic repository as a service
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IBasketRepository, BasketRepository>();
 
             // Adding auto mapper
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
