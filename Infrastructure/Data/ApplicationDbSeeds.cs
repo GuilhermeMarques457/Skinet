@@ -14,11 +14,11 @@ namespace Infrastructure.Data
         public static async Task SeedAsync(ApplicationDbContext context)
         {
             //This is to update my seeds data xD
-            context.ProductBrands.RemoveRange(context.ProductBrands);
-            context.ProductTypes.RemoveRange(context.ProductTypes);
-            context.Products.RemoveRange(context.Products);
+            //context.ProductBrands.RemoveRange(context.ProductBrands);
+            //context.ProductTypes.RemoveRange(context.ProductTypes);
+            //context.Products.RemoveRange(context.Products);
 
-            context.SaveChanges();
+            //context.SaveChanges();
 
 
             if (!context.ProductBrands.Any())

@@ -8,6 +8,40 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Content\images\products\assassin%27s unity.jpg" />
+    <Content Include="Content\images\products\bully.jpg" />
+    <Content Include="Content\images\products\dark-souls-1.jpg" />
+    <Content Include="Content\images\products\dark-souls-2.jpg" />
+    <Content Include="Content\images\products\dark-souls-3.jpg" />
+    <Content Include="Content\images\products\devil-may-cry-3.jpg" />
+    <Content Include="Content\images\products\elden-ring.jpg" />
+    <Content Include="Content\images\products\fifa-23.jpg" />
+    <Content Include="Content\images\products\fortnite.jpg" />
+    <Content Include="Content\images\products\gow-2.jpg" />
+    <Content Include="Content\images\products\gow-2018.jpg" />
+    <Content Include="Content\images\products\gta-5.jpg" />
+    <Content Include="Content\images\products\gta-san-andreas.jpg" />
+    <Content Include="Content\images\products\halo-4.jpg" />
+    <Content Include="Content\images\products\hogwarts.jpg" />
+    <Content Include="Content\images\products\hollow-night.jpg" />
+    <Content Include="Content\images\products\outer-wilds.jpg" />
+    <Content Include="Content\images\products\paper-mario.jpg" />
+    <Content Include="Content\images\products\red-dead-redemption.jpg" />
+    <Content Include="Content\images\products\resident-evil-2-remake.jpg" />
+    <Content Include="Content\images\products\resident-evil-4.jpg" />
+    <Content Include="Content\images\products\resident-evil-7.jpg" />
+    <Content Include="Content\images\products\resident-evil-hd.jpg" />
+    <Content Include="Content\images\products\resident-evil-village.jpg" />
+    <Content Include="Content\images\products\sekiro.jpg" />
+    <Content Include="Content\images\products\stray.jpg" />
+    <Content Include="Content\images\products\tunic.jpg" />
+    <Content Include="Content\images\products\valorant.jpg" />
+    <Content Include="Content\images\products\wow.jpg" />
+    <Content Include="Content\images\products\zelda-breath.jpg" />
+    <Content Include="Content\images\products\zelda-ocarina.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
@@ -29,7 +63,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\images\.DS_Store" />
+    <None Include="Content\images\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>
