@@ -27,8 +27,9 @@ namespace API.Controllers
             _brandRepository = brandRepository;
         }
 
+        [Cached(600)]
         [HttpGet()]
-        public async Task<Pagination<ProductResponseDto>> GetProducts([FromQuery] ProductSpecificationParameters productParams)
+        public async Task<ActionResult<Pagination<ProductResponseDto>>> GetProducts([FromQuery] ProductSpecificationParameters productParams)
         {
             // productParams.Sort = productParams.Sort ?? "nameAsc";
 
@@ -39,10 +40,11 @@ namespace API.Controllers
             var products = await _productRepository.GetAllWithSpecificationAsync(spec);
             var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductResponseDto>>(products);
 
-            return new Pagination<ProductResponseDto>(productParams.PageIndex, productParams.PageSize, totalItems, data);
+            return Ok(new Pagination<ProductResponseDto>(productParams.PageIndex, productParams.PageSize, totalItems, data));
         }
 
 
+        [Cached(600)]
         [HttpGet("{id}")]
         // Saying to swagger which type of result we will be sending back
         // [ProducesResponseType(StatusCodes.Status200OK)]
@@ -63,19 +65,23 @@ namespace API.Controllers
         }
 
         [HttpGet("types")]
-        public async Task<IReadOnlyList<ProductType>> GetTypes()
+
+        [Cached(600)]
+        public async Task<ActionResult<IReadOnlyList<ProductType>>> GetTypes()
         {
             var types = await _typeRepository.GetAllAsync();
 
-            return types;
+            return Ok(types);
         }
 
         [HttpGet("brands")]
-        public async Task<IReadOnlyList<ProductBrand>> GetBrands()
+
+        [Cached(600)]
+        public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetBrands()
         {
             var brands = await _brandRepository.GetAllAsync();
 
-            return brands;
+            return Ok(brands);
         }
     }
 }

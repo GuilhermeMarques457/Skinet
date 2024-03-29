@@ -13,7 +13,9 @@
         <ng-container *ngFor="let brand of brands; let i = index">
           <li
             class="list-group-item"
-            [class.active]="brand.id === shopParams.brandId"
+            [class.active]="
+              brand.id === this.shopService.getShopParams().brandId
+            "
             [value]="brand.id"
             (click)="onBrandSelected(brand.id)"
             *ngIf="i < 6 || seeAllBrands"
@@ -35,7 +37,7 @@
         <ng-container *ngFor="let type of types; let i = index">
           <li
             class="list-group-item"
-            [class.active]="type.id === shopParams.typeId"
+            [class.active]="type.id === this.shopService.getShopParams().typeId"
             [value]="type.id"
             (click)="onTypeSelected(type.id)"
             *ngIf="i < 6 || seeAllTypes"
@@ -56,8 +58,8 @@
     <section class="col-9">
       <div class="d-flex justify-content-between align-items-center pb-2">
         <app-paging-header
-          [pageNumber]="shopParams.pageNumber"
-          [pageSize]="shopParams.pageSize"
+          [pageNumber]="this.shopService.getShopParams().pageNumber"
+          [pageSize]="this.shopService.getShopParams().pageSize"
           [totalCount]="totalCount"
         ></app-paging-header>
         <form class="d-flex mt-2" [formGroup]="form">
@@ -84,8 +86,9 @@
       </div>
       <div class="d-flex justify-content-center">
         <app-pager
+          [pageNumber]="this.shopService.getShopParams().pageNumber"
           [totalCount]="totalCount"
-          [pageSize]="shopParams.pageSize"
+          [pageSize]="this.shopService.getShopParams().pageSize"
           (pageChanged)="onPageChanged($event)"
         ></app-pager>
       </div>

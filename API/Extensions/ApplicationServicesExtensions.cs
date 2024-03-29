@@ -37,6 +37,8 @@ namespace API.Extensions
                 return ConnectionMultiplexer.Connect(options);
             });
 
+            services.AddSingleton<IResponseCacheService, ResponseCacheService>();
+
             // Injecting our single dbcontext (unit of work make it single)
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ITokenService, TokenService>();

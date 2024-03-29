@@ -40,7 +40,7 @@ export class ProductDetailsComponent {
         next: (response) => {
           this.product = response;
 
-          this.bcService.set('@productDetails', this.product.name);
+          this.bcService.set('@productDetails', this.product!.name);
           this.basketService.basketSource$.pipe(take(1)).subscribe({
             next: (basket) => {
               const item = basket?.items.find((x) => x.id === +id);
