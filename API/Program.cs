@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
+using System.IO;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +26,11 @@ app.UseStatusCodePagesWithReExecute("/errors/{0}");
 app.UseSwaggerDocumentation();
 
 app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Content")),
+    RequestPath = "/Content"
+});
 
 app.UseCors("CorsPolicy");
 
@@ -31,6 +38,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapFallbackToController("Index", "Fallback");
 
 
 // Applying migrations automatically when the app starts

@@ -1,0 +1,70 @@
+[
+  {
+    "Id": 1,
+    "Name": "FPS"
+  },
+  {
+    "Id": 2,
+    "Name": "Battle Royale"
+  },
+  {
+    "Id": 3,
+    "Name": "Adventure"
+  },
+  {
+    "Id": 4,
+    "Name": "PVP"
+  },
+  {
+    "Id": 5,
+    "Name": "RTS"
+  },
+  {
+    "Id": 6,
+    "Name": "MOBA"
+  },
+  {
+    "Id": 7,
+    "Name": "RPG"
+  },
+  {
+    "Id": 8,
+    "Name": "MMORPG"
+  },
+  {
+    "Id": 9,
+    "Name": "Action"
+  },
+  {
+    "Id": 10,
+    "Name": "Puzzle"
+  },
+  {
+    "Id": 11,
+    "Name": "Horror"
+  },
+  {
+    "Id": 12,
+    "Name": "Strategy"
+  },
+  {
+    "Id": 13,
+    "Name": "Sports"
+  },
+  {
+    "Id": 14,
+    "Name": "Hack & Slash"
+  },
+  {
+    "Id": 15,
+    "Name": "Open World"
+  },
+  {
+    "Id": 16,
+    "Name": "Souls Like"
+  },
+  {
+    "Id": 17,
+    "Name": "Stealth"
+  }
+]

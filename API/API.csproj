@@ -26,10 +26,12 @@
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+	<Content Include="Content\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\images\.DS_Store" />
+    <Folder Include="Content\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>

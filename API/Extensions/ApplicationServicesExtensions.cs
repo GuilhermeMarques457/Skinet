@@ -25,7 +25,7 @@ namespace API.Extensions
             services.AddSwaggerDocumentation();
             services.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseSqlite(config.GetConnectionString("DefaultConnection"));
+                options.UseNpgsql(config.GetConnectionString("DefaultConnection"));
             });
 
             // Adding our connection to Redis (it must be Singleton because it will share shared by all users)

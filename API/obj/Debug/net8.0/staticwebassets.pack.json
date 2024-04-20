@@ -1,0 +1,153 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\3rdpartylicenses.txt",
+      "PackagePath": "staticwebassets\\3rdpartylicenses.txt"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\assets\\images\\404-error.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\404-error.svg"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\assets\\images\\500-error.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\500-error.svg"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\assets\\images\\hero1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\hero1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\assets\\images\\hero2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\hero2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\assets\\images\\hero3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\hero3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\assets\\images\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\assets\\images\\placeholder.png",
+      "PackagePath": "staticwebassets\\assets\\images\\placeholder.png"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\assets\\js\\darkmodetoggle.js",
+      "PackagePath": "staticwebassets\\assets\\js\\darkmodetoggle.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\chunk-4VB32LJY.js",
+      "PackagePath": "staticwebassets\\chunk-4VB32LJY.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\chunk-BNX52G2A.js",
+      "PackagePath": "staticwebassets\\chunk-BNX52G2A.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\chunk-CVZN5AOS.js",
+      "PackagePath": "staticwebassets\\chunk-CVZN5AOS.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\chunk-D3OPBXDR.js",
+      "PackagePath": "staticwebassets\\chunk-D3OPBXDR.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\chunk-DLR7HEP5.js",
+      "PackagePath": "staticwebassets\\chunk-DLR7HEP5.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\chunk-ECQ47ZSO.js",
+      "PackagePath": "staticwebassets\\chunk-ECQ47ZSO.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\chunk-HH6FJ64Z.js",
+      "PackagePath": "staticwebassets\\chunk-HH6FJ64Z.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\chunk-JFSZDBGP.js",
+      "PackagePath": "staticwebassets\\chunk-JFSZDBGP.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\chunk-JQ7DSUF5.js",
+      "PackagePath": "staticwebassets\\chunk-JQ7DSUF5.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\chunk-QJKD3SDR.js",
+      "PackagePath": "staticwebassets\\chunk-QJKD3SDR.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\chunk-QQ24GPAG.js",
+      "PackagePath": "staticwebassets\\chunk-QQ24GPAG.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\chunk-UC6EDCVL.js",
+      "PackagePath": "staticwebassets\\chunk-UC6EDCVL.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\chunk-UKGAFJZH.js",
+      "PackagePath": "staticwebassets\\chunk-UKGAFJZH.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\main-YUFQ4QN3.js",
+      "PackagePath": "staticwebassets\\main-YUFQ4QN3.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\media\\fontawesome-webfont-3KIJVIEY.svg",
+      "PackagePath": "staticwebassets\\media\\fontawesome-webfont-3KIJVIEY.svg"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\media\\fontawesome-webfont-5GKVPAEF.woff2",
+      "PackagePath": "staticwebassets\\media\\fontawesome-webfont-5GKVPAEF.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\media\\fontawesome-webfont-FMJ3VJ65.eot",
+      "PackagePath": "staticwebassets\\media\\fontawesome-webfont-FMJ3VJ65.eot"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\media\\fontawesome-webfont-RJ6LE7IU.ttf",
+      "PackagePath": "staticwebassets\\media\\fontawesome-webfont-RJ6LE7IU.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\media\\fontawesome-webfont-Z4ARLA73.woff",
+      "PackagePath": "staticwebassets\\media\\fontawesome-webfont-Z4ARLA73.woff"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\polyfills-RX4V3J3S.js",
+      "PackagePath": "staticwebassets\\polyfills-RX4V3J3S.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\scripts-YPAL5CW7.js",
+      "PackagePath": "staticwebassets\\scripts-YPAL5CW7.js"
+    },
+    {
+      "Id": "C:\\Users\\Microsoft\\Documents\\Arquivos Programação\\eCommerce .Net + Angular\\Skinet\\API\\wwwroot\\styles-SBCQSYRW.css",
+      "PackagePath": "staticwebassets\\styles-SBCQSYRW.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.API.props",
+      "PackagePath": "build\\API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.API.props",
+      "PackagePath": "buildMultiTargeting\\API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.API.props",
+      "PackagePath": "buildTransitive\\API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

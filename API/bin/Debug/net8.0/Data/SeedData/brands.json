@@ -1,0 +1,71 @@
+[
+  {
+    "Id": 1,
+    "Name": "Nintendo"
+  },
+  {
+    "Id": 2,
+    "Name": "Sony Interactive Entertainment"
+  },
+  {
+    "Id": 3,
+    "Name": "Microsoft Game Studios"
+  },
+  {
+    "Id": 4,
+    "Name": "Epic Games"
+  },
+  {
+    "Id": 5,
+    "Name": "Ubisoft"
+  },
+  {
+    "Id": 6,
+    "Name": "Activision Blizzard"
+  },
+  {
+    "Id": 7,
+    "Name": "Electronic Arts (EA)"
+  },
+  {
+    "Id": 8,
+    "Name": "Riot Games"
+  },
+  {
+    "Id": 9,
+    "Name": "Capcom"
+  },
+  {
+    "Id": 10,
+    "Name": "Annapurna Interactive"
+  },
+  {
+    "Id": 11,
+    "Name": "Tunic Team"
+  },
+  {
+    "Id": 12,
+    "Name": "Rockstar Games"
+  },
+  {
+    "Id": 13,
+    "Name": "Santa Monica"
+  },
+  {
+    "Id": 14,
+    "Name": "Avalanche Software"
+  },
+  {
+    "Id": 15,
+    "Name": "BlueTwelve Studio"
+  },
+  {
+    "Id": 16,
+    "Name": "From Software"
+  },
+  {
+    "Id": 17,
+    "Name": "Team Cherry"
+  }
+
+]

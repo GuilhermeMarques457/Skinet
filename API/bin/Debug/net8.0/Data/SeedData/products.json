@@ -1,0 +1,200 @@
+[
+  {
+    "Id": 1,
+    "Name": "Resident Evil 4",
+    "Description": "An acclaimed action and horror game developed by Capcom. Originally released in 2005, the game revolutionized the Resident Evil series with its innovative approach and immersive atmosphere. The plot follows special agent Leon S. Kennedy, sent on a mission to rescue the daughter of the President of the United States, who has been kidnapped by a mysterious cult in a remote European village.",
+    "Price": 200,
+    "PictureUrl": "images/products/resident-evil-4.jpg",
+    "ProductTypeId": 11,
+    "ProductBrandId": 9
+  },
+  {
+    "Id": 2,
+    "Name": "Outer Wilds",
+    "Description": "An award-winning exploration and puzzle-solving game developed by Mobius Digital. Embark on a cosmic journey as an astronaut trapped in a time loop, uncovering the mysteries of a dynamic and interconnected solar system..",
+    "Price": 50,
+    "PictureUrl": "images/products/outer-wilds.jpg",
+    "ProductTypeId": 3,
+    "ProductBrandId": 10
+  },
+  {
+    "Id": 3,
+    "Name": "Tunic",
+    "Description": "An indie action-adventure game developed by Andrew Shouldice. Players control a small fox exploring a mysterious world, solving puzzles, battling enemies, and uncovering secrets. With its charming art style and engaging gameplay",
+    "Price": 50,
+    "PictureUrl": "images/products/tunic.jpg",
+    "ProductTypeId": 3,
+    "ProductBrandId": 11
+  },
+  {
+    "Id": 4,
+    "Name": "The Legend of Zelda: Ocarina of Time",
+    "Description": "A classic action-adventure game developed by Nintendo. Released in 1998 for the Nintendo 64, it follows the protagonist, Link, on a quest to stop the evil Ganondorf and save the land of Hyrule. Notable for its innovative 3D gameplay, intricate dungeons, and the use of the musical Ocarina to solve puzzles, the game is celebrated as one of the greatest video games of all time.",
+    "Price": 300,
+    "PictureUrl": "images/products/zelda-ocarina.jpg",
+    "ProductTypeId": 3,
+    "ProductBrandId": 1
+  },
+  {
+    "Id": 5,
+    "Name": "Resident Evil 7: Biohazard",
+    "Description": "A survival horror game developed and published by Capcom. Released in 2017, it marks a significant departure from the series' traditional style by adopting a first-person perspective. The game follows Ethan Winters, who searches for his missing wife in a derelict plantation mansion in Dulvey, Louisiana. Immerse yourself in a chilling atmosphere, solve puzzles, and confront horrifying creatures as the narrative unfolds, delivering a tense and terrifying experience in the Resident Evil universe.",
+    "Price": 350,
+    "PictureUrl": "images/products/resident-evil-7.jpg",
+    "ProductTypeId": 11,
+    "ProductBrandId": 9
+  },
+  {
+    "Id": 6,
+    "Name": "Devil May Cry 3: Dante's Awakening",
+    "Description": "An action-packed hack-and-slash game developed and published by Capcom. Initially released in 2005, it serves as a prequel to the original Devil May Cry series. Players control Dante, a stylish and demon-slaying protagonist, as he battles through challenging levels and faces formidable foes. Known for its fast-paced combat, intricate combos, and engaging story,",
+    "Price": 120,
+    "PictureUrl": "images/products/devil-may-cry-3.jpg",
+    "ProductTypeId": 14,
+    "ProductBrandId": 9
+  },
+  {
+    "Id": 7,
+    "Name": "Red Dead Redemption 2",
+    "Description": "an epic action-adventure game developed and published by Rockstar Games. Released in 2018, it serves as a prequel to the original Red Dead Redemption. The game is set in the late 1800s and follows Arthur Morgan, an outlaw and member of the Van der Linde gang, as they navigate the changing landscapes of the American Wild West.",
+    "Price": 350,
+    "PictureUrl": "images/products/red-dead-redemption.jpg",
+    "ProductTypeId": 2,
+    "ProductBrandId": 2
+  },
+  {
+    "Id": 8,
+    "Name": "Grand Theft Auto V",
+    "Description": "Set in the fictional state of San Andreas, which is based on Southern California, GTA V features three playable protagonists: Michael De Santa, Trevor Philips, and Franklin Clinton. The game's narrative intertwines their stories as they engage in various criminal activities, heists, and encounters with a diverse cast of characters.",
+    "Price": 150,
+    "PictureUrl": "images/products/gta-5.jpg",
+    "ProductTypeId": 15,
+    "ProductBrandId": 12
+  },
+  {
+    "Id": 9,
+    "Name": "Hogwarts Legacy",
+    "Description": "An action role-playing video game set in the Wizarding World of Harry Potter. Developed by Portkey Games and published by Warner Bros. Interactive Entertainment, the game is set in the 1800s, long before the events of the Harry Potter book series.",
+    "Price": 300,
+    "PictureUrl": "images/products/hogwarts.jpg",
+    "ProductTypeId": 15,
+    "ProductBrandId": 14
+  },
+  {
+    "Id": 10,
+    "Name": "Good Of War (2018)",
+    "Description": "An action-adventure game developed by Santa Monica Studio and published by Sony Interactive Entertainment. It's the eighth installment in the God of War series and serves as a soft reboot of the franchise. The game was released exclusively for the PlayStation 4.",
+    "Price": 300,
+    "PictureUrl": "images/products/gow-2018.jpg",
+    "ProductTypeId": 15,
+    "ProductBrandId": 13
+  },
+  {
+    "Id": 11,
+    "Name": "God of War 2",
+    "Description": "For the PlayStation 2 follows Kratos, the protagonist, on his quest to overthrow the gods of Olympus. The game received critical acclaim for its gameplay, storytelling, and visuals at the time of its release.",
+    "Price": 100,
+    "PictureUrl": "images/products/gow-2.jpg",
+    "ProductTypeId": 14,
+    "ProductBrandId": 13
+  },
+  {
+    "Id": 12,
+    "Name": "Stray",
+    "Description": "Players explore the urban environment, solve puzzles, and interact with the city's robotic inhabitants while uncovering the narrative. The unique perspective of playing as a cat provides a fresh and intriguing angle to the gameplay.",
+    "Price": 60,
+    "PictureUrl": "images/products/stray.jpg",
+    "ProductTypeId": 3,
+    "ProductBrandId": 15
+  },
+  {
+    "Id": 13,
+    "Name": "Super Paper Mario",
+    "Description": "Is a platform role-playing game developed by Intelligent Systems and published by Nintendo for the Wii console. It was released in 2007. The game is part of the Paper Mario series, known for its distinctive art style where characters and environments appear as if they are made of paper.",
+    "Price": 200,
+    "PictureUrl": "images/products/paper-mario.jpg",
+    "ProductTypeId": 3,
+    "ProductBrandId": 1
+  },
+  {
+    "Id": 14,
+    "Name": "The Legend of Zelda: Breath of the Wild",
+    "Description": "Set in the kingdom of Hyrule, Breath of the Wild introduces an open-world concept, allowing players to explore a vast, interconnected world freely. The game follows Link, who awakens from a century-long slumber to defeat Calamity Ganon and save Princess Zelda. The gameplay emphasizes exploration, puzzle-solving, and survival, with an expansive world filled with diverse environments, wildlife, and ancient ruins.",
+    "Price": 350,
+    "PictureUrl": "images/products/zelda-breath.jpg",
+    "ProductTypeId": 15,
+    "ProductBrandId": 1
+  },
+  {
+    "Id": 15,
+    "Name": "Dark Souls I",
+    "Description": "Key features of Dark Souls include its challenging combat, interconnected world design, and a dark, atmospheric fantasy setting. The game is known for its difficulty, emphasizing methodical and strategic combat, as well as its deep lore and minimalistic storytelling.",
+    "Price": 150,
+    "PictureUrl": "images/products/dark-souls-1.jpg",
+    "ProductTypeId": 16,
+    "ProductBrandId": 16
+  },
+  {
+    "Id": 16,
+    "Name": "Dark Souls II",
+    "Description": "Similar to the first game, Dark Souls II is known for its challenging combat, atmospheric world design, and deep lore. It introduces a new protagonist known as the Bearer of the Curse and explores a different part of the game world, the kingdom of Drangleic. The game retains the punishing difficulty and intricate level design that fans of the series have come to expect.",
+    "Price": 150,
+    "PictureUrl": "images/products/dark-souls-2.jpg",
+    "ProductTypeId": 16,
+    "ProductBrandId": 16
+  },
+  {
+    "Id": 17,
+    "Name": "Dark Souls III",
+    "Description": "Players once again delve into a dark and challenging action RPG experience. The game maintains the series' reputation for difficult combat, intricate level design, and a deep, interconnected world. Set in the Kingdom of Lothric, players face formidable enemies and powerful bosses while uncovering the mysteries of the game's lore.",
+    "Price": 200,
+    "PictureUrl": "images/products/dark-souls-3.jpg",
+    "ProductTypeId": 16,
+    "ProductBrandId": 16
+  },
+  {
+    "Id": 18,
+    "Name": "Sekiro: Shadows Die Twice",
+    "Description": "Players assume the role of a shinobi known as Wolf, who embarks on a mission to rescue his kidnapped lord and seek revenge on his enemies. The game introduces a more intense and precise combat system, emphasizing parrying and a posture system. The protagonist has a katana and a grappling hook, providing new ways to approach encounters and traverse the environment.",
+    "Price": 200,
+    "PictureUrl": "images/products/sekiro.jpg",
+    "ProductTypeId": 16,
+    "ProductBrandId": 16
+  },
+  {
+    "Id": 19,
+    "Name": "Elden Ring",
+    "Description": "Is expected to feature an open-world environment, a departure from the more linear level design of FromSoftware's previous titles. The game is anticipated to maintain the challenging combat mechanics and atmospheric storytelling that the studio is renowned for. Players can explore a vast and interconnected world filled with various landscapes, dungeons, and formidable enemies.",
+    "Price": 350,
+    "PictureUrl": "images/products/elden-ring.jpg",
+    "ProductTypeId": 16,
+    "ProductBrandId": 16
+  },
+  {
+    "Id": 20,
+    "Name": "Hollow Knight",
+    "Description": "Players control a titular knight exploring the vast and atmospheric world of Hallownest. The game features challenging combat, intricate platforming, and a deep, interconnected world filled with secrets and lore. Players encounter diverse enemies and bosses as they uncover the mysteries of the fallen kingdom.",
+    "Price": 60,
+    "PictureUrl": "images/products/hollow-night.jpg",
+    "ProductTypeId": 16,
+    "ProductBrandId": 17
+  },
+  {
+    "Id": 21,
+    "Name": "Assassin's Creed: Unity",
+    "Description": "Players take on the role of Arno Dorian, an Assassin seeking redemption amidst the chaos of the revolution. The game is known for its detailed recreation of Paris, the introduction of cooperative multiplayer missions, and a focus on parkour-based movement.",
+    "Price": 250,
+    "PictureUrl": "images/products/assassin's unity.jpg",
+    "ProductTypeId": 17,
+    "ProductBrandId": 5
+  },
+  {
+    "Id": 22,
+    "Name": "Fortnite",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 0,
+    "PictureUrl": "images/products/fortnite.jpg",
+    "ProductTypeId": 2,
+    "ProductBrandId": 4
+  }
+]
